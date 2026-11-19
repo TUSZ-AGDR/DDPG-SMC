@@ -1,6 +1,9 @@
 # RL Based SMC Gain Optimization for DJI Tello Quadcopter
 
-(./block_diag.png)
+<p align="center">
+<img src="./block_diagram.png" alt="DDPG-SMC DJI Tello trajectory tracking" width="700">
+</p>
+
 
 The **DDPG-SMC Repository** implements online SMC gain optimization for the DJI Tello quadcopter for trajectory tracking.
 
