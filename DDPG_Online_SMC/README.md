@@ -38,7 +38,3 @@ python online_xyz_ddpg/plot_xyz_ddpg_comparison.py `
   --results online_xyz_ddpg/results `
   --output online_xyz_ddpg/results/plots
 ```
-
-For the validated run used in this folder, `results_final_aw` also contains
-`mass_sweep.json`, which evaluates both controllers at 0.076, 0.080, and
-0.084 kg.
