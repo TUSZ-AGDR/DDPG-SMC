@@ -41,6 +41,8 @@ The optional preceding optimization is performed by `DDPD_Traj_1.py`. It searche
 </p>
 
 
+![DJI Tello trajectory demo](./trajectory_1_square.gif)
+
 
 ## Trajectory 2 S-curve trajectory
 The S-curve experiment is independent of the square experiment. `DDPD_Traj_2.py` uses a three-dimensional S-shaped reference and optimizes the X/Y/Z position gains. Its attitude gains are fixed. The script displays a top-down XY path, a 3-D path, position-versus-time plots, and per-axis tracking errors. `Simulation_Traj_2.py` provides the corresponding S-curve controller comparison and prints the position RMSE, IAE, MAE, and cost metrics.
