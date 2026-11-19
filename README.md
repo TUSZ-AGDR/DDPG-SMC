@@ -1,4 +1,4 @@
-# [RL Based SMC Gain Optimization for DJI Tello Quadcopter]
+# RL Based SMC Gain Optimization for DJI Tello Quadcopter
 
 ![Screenshot](./preview.png)
 
