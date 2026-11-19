@@ -36,6 +36,11 @@ This framework includes both offline and online DDPG variants for sliding mode c
 The square experiment uses `Simulation_Traj_1.py` to compare three controllers on the same reference: offline RL-SMC, manually tuned SMC, and tuned PID. The reference contains horizontal directional transitions and altitude segments. The script reports RMSE, IAE, MAE, attitude measures, and peak attitude angles, and displays position tracking, error, attitude, 3-D path, and sliding-surface/phase-plane figures.
 The optional preceding optimization is performed by `DDPD_Traj_1.py`. It searches fixed position and attitude SMC parameters and writes a NumPy result file plus a companion gains file. The gains are then copied into the comparison script when a new offline optimization is selected.
 
+<p align="center">
+<img src="./trajectory_demo.gif" alt="DDPG-SMC DJI Tello trajectory tracking" width="700">
+</p>
+
+
 
 ## Trajectory 2 S-curve trajectory
 The S-curve experiment is independent of the square experiment. `DDPD_Traj_2.py` uses a three-dimensional S-shaped reference and optimizes the X/Y/Z position gains. Its attitude gains are fixed. The script displays a top-down XY path, a 3-D path, position-versus-time plots, and per-axis tracking errors. `Simulation_Traj_2.py` provides the corresponding S-curve controller comparison and prints the position RMSE, IAE, MAE, and cost metrics.
