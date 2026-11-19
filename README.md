@@ -5,7 +5,7 @@
 
 The **DDPG-SMC Repository** implements online SMC gain optimization for the DJI Tello quadcopter for trajectory tracking.
 
-️⭐ Reinforcement learning enhanced sliding mode control framework for underactuated quadrotors, with aerodynamic modelling via blade element momentum theory.This repository contains Python simulations of a six-degree-of-freedom quadrotor controlled with sliding-mode control (SMC), offline Deep Deterministic Policy Gradient (DDPG) gain tuning, and an online/time-varying DDPG residual-gain controller
+️⭐ Reinforcement learning enhanced sliding mode control framework for underactuated quadrotors, with aerodynamic modelling via blade element momentum theory.This repository contains Python simulations of a six-degree-of-freedom quadrotor controlled with sliding-mode control (SMC), offline Deep Deterministic Policy Gradient (DDPG) gain tuning, and an online/time-varying DDPG residual-gain controller ⭐
 
 The offline studies select fixed gains before a trajectory is simulated. The online study changes only the nine position-loop gains during the square manoeuvre; roll, pitch, and yaw gains remain fixed. The plant mass is randomized by 5% during online training, while the controller uses the nominal 0.080 kg model mass.
 
