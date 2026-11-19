@@ -37,11 +37,10 @@ The square experiment uses `Simulation_Traj_1.py` to compare three controllers o
 The optional preceding optimization is performed by `DDPD_Traj_1.py`. It searches fixed position and attitude SMC parameters and writes a NumPy result file plus a companion gains file. The gains are then copied into the comparison script when a new offline optimization is selected.
 
 <p align="center">
-<img src="./trajectory_1_square.gif" alt="DDPG-SMC DJI Tello trajectory tracking" width="700">
+<img src="./trajectory_1_square.gif" alt="DDPG-SMC DJI Tello trajectory tracking" width="400">
 </p>
 
 
-![DJI Tello trajectory demo](./trajectory_1_square.gif)
 
 
 ## Trajectory 2 S-curve trajectory
