@@ -50,14 +50,19 @@ Training uses a nominal controller mass of 0.080 kg and samples the simulated pl
 Run all commands from the repository root. A Python 3.9+ environment is recommended. Install the packages below:
 
 python -m venv .venv
+
 .\.venv\Scripts\Activate.ps1
+
 python -m pip install --upgrade pip
+
 python -m pip install numpy scipy matplotlib torch numba
+
 
 
 Syntax check without starting training:
 
 python -m py_compile DDPD_Traj_1.py DDPD_Traj_2.py Simulation_Traj_1.py Simulation_Traj_2.py
+
 python -m py_compile online_xyz_ddpg\online_xyz_ddpg.py online_xyz_ddpg\simulation.py online_xyz_ddpg\plot_xyz_ddpg_comparison.py
 
 Square optimization smoke test and full run:
