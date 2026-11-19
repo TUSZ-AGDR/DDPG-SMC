@@ -47,6 +47,11 @@ The optional preceding optimization is performed by `DDPD_Traj_1.py`. It searche
 The S-curve experiment is independent of the square experiment. `DDPD_Traj_2.py` uses a three-dimensional S-shaped reference and optimizes the X/Y/Z position gains. Its attitude gains are fixed. The script displays a top-down XY path, a 3-D path, position-versus-time plots, and per-axis tracking errors. `Simulation_Traj_2.py` provides the corresponding S-curve controller comparison and prints the position RMSE, IAE, MAE, and cost metrics.
 
 
+<p align="center">
+<img src="./trajectory_1_square.gif" alt="DDPG-SMC DJI Tello trajectory tracking" width="500">
+</p>
+
+
 ## Full online DDPG results
 The online controller in `online_xyz_ddpg.py` is a different experiment from the offline scripts. The actor receives a normalized 23-element observation and produces nine bounded residuals for `[lambda_x, K_x, delta_x, lambda_y, K_y, delta_y, lambda_z, K_z, delta_z]`. These residuals are smoothed before being applied. Roll, pitch, and yaw gains remain fixed.
 Training uses a nominal controller mass of 0.080 kg and samples the simulated plant mass uniformly from 0.076 to 0.084 kg. Training alternates hover and square cases. Adaptation is disabled during hover so the hover baseline remains unchanged; adaptation is active during the square manoeuvre, where horizontal transients provide the learning signal. Therefore, similar hover RMSE values are expected and should not be described as an adaptive improvement.
