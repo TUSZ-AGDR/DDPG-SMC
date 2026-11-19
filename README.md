@@ -108,8 +108,23 @@ python online_xyz_ddpg\simulation.py --results online_xyz_ddpg\results_final --o
 ## Troubleshooting
 If an online plotting command reports missing files, verify that the specified result directory contains `online_xyz_ddpg_actor_critic.pt`, both adaptive/fixed NPZ files, and `evaluation_summary.json`. If a training run is slow, start with the smoke command, then increase the episode count. If figures appear in windows rather than being saved, use `simulation.py` or `plot_xyz_ddpg_comparison.py`, which save files directly.
 
+## Citation
+If you use this code in your research, please cite our work:
 
-
+```bibtex
+@Article{electronics15215152,
+AUTHOR = {Nashit, Arshad Syed Muhammad and Malik, Kamal Mazhar and Chen, Mingqi and Li, Qiang and Ming, Zhong},
+TITLE = {Intelligent Flight Tracking for Uncrewed Aerial Vehicles with Blade Element Momentum Aerodynamic Modeling},
+JOURNAL = {Electronics},
+VOLUME = {15},
+YEAR = {2026},
+NUMBER = {21},
+ARTICLE-NUMBER = {5152},
+URL = {https://www.mdpi.com/2079-9292/15/21/5152},
+ISSN = {2079-9292},
+ABSTRACT = {Quadrotors attract broad military and civilian interest, yet their underactuated, highly coupled, and nonlinear dynamics make precise control difficult. While sliding-mode control (SMC) offers robust trajectory tracking, tuning its parameters remains a tedious manual task. To address this challenge, this research presents deep deterministic policy gradient (DDPG) with SMC for a DJI Tello quadrotor whose aerodynamic coefficients are estimated using blade element momentum theory. Two controller variants are evaluated separately. The offline variant uses DDPG to select bounded fixed SMC gains for two reference-trajectory comparisons against manually tuned SMC and PID/PD baselines. The online variant uses a residual DDPG actor to update position-loop gains during a separate square-trajectory simulation while the attitude loop gains remain fixed. The fixed-gain comparisons show lower reported position-tracking RMSE for the DDPG-tuned controller under the tested conditions. The online experiment demonstrates bounded gain variation and its effect on square-trajectory tracking under the specified mass-uncertainty protocol.},
+DOI = {10.3390/electronics15215152}
+}
 
 
 
