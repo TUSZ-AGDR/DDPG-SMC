@@ -1,6 +1,6 @@
-# [Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)
+# [RL Based SMC Gain Optimization for DJI Tello Quadcopter]
 
-[![Screenshot](./preview.png)](https://hugoblox.com/hugo-themes/)
+[![Screenshot](./preview.png)]
 
 The **DDPG-SMC Repository** implements online SMC gain optimization for the DJI Tello quadcopter for trajectory tracking.
 
