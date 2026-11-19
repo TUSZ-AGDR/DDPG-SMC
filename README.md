@@ -108,6 +108,9 @@ python online_xyz_ddpg\simulation.py --results online_xyz_ddpg\results_final --o
 ## Troubleshooting
 If an online plotting command reports missing files, verify that the specified result directory contains `online_xyz_ddpg_actor_critic.pt`, both adaptive/fixed NPZ files, and `evaluation_summary.json`. If a training run is slow, start with the smoke command, then increase the episode count. If figures appear in windows rather than being saved, use `simulation.py` or `plot_xyz_ddpg_comparison.py`, which save files directly.
 
+## Funding
+This work was supported by the Natural Science Foundation of Top Talent of SZTU (Grant No. GDRC202411) and GuangDong Engineering Technology Research Center of Edge Intelligence.
+
 ## Citation
 If you use this code in your research, please cite our work:
 
