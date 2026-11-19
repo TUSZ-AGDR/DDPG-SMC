@@ -68,6 +68,7 @@ python -m py_compile online_xyz_ddpg\online_xyz_ddpg.py online_xyz_ddpg\simulati
 **Square optimization smoke test and full run:**
 
 python DDPD_Traj_1.py --passes 1 --episodes 2 --patience 2 --no-plots --output square_smoke.npz
+
 python DDPD_Traj_1.py --passes 3 --episodes 600 --patience 55 --seed 7 --output square_ddpg_results.npz
 
 **Square comparison:**
