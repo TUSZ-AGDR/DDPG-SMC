@@ -2,7 +2,7 @@
 
 
 <p align="center">
-<img src="./block_diagram.png" alt="DDPG-SMC DJI Tello trajectory tracking" width="700">
+<img src="./block_diagram.png" alt="DDPG-SMC DJI Tello trajectory tracking" width="500">
 </p>
 
 ![DJI Tello trajectory demo](./block_diagram.png)
