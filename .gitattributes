@@ -1,0 +1,5 @@
+# Ignore docs and images from language stats
+*.md linguist-documentation=true
+*.png linguist-documentation=true
+*.gif linguist-documentation=true
+assets/** linguist-documentation=true
