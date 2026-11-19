@@ -47,27 +47,36 @@ Training uses a nominal controller mass of 0.080 kg and samples the simulated pl
 
 ## Installation and run instructions
 
-Run all commands from the repository root. A Python 3.9+ environment is recommended. Install the packages below; 
+Run all commands from the repository root. A Python 3.9+ environment is recommended. Install the packages below
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install numpy scipy matplotlib torch numba
+
+
 Syntax check without starting training:
+
 python -m py_compile DDPD_Traj_1.py DDPD_Traj_2.py Simulation_Traj_1.py Simulation_Traj_2.py
 python -m py_compile online_xyz_ddpg\online_xyz_ddpg.py online_xyz_ddpg\simulation.py online_xyz_ddpg\plot_xyz_ddpg_comparison.py
+
 Square optimization smoke test and full run:
 python DDPD_Traj_1.py --passes 1 --episodes 2 --patience 2 --no-plots --output square_smoke.npz
 python DDPD_Traj_1.py --passes 3 --episodes 600 --patience 55 --seed 7 --output square_ddpg_results.npz
+
 Square comparison:
 python Simulation_Traj_1.py
+
 S-curve optimization and comparison:
 python DDPD_Traj_2.py
 python Simulation_Traj_2.py
+
 Online DDPG smoke test and training:
 python online_xyz_ddpg\online_xyz_ddpg.py --episodes 2 --train-scenario both --output online_xyz_ddpg\smoke
 python online_xyz_ddpg\online_xyz_ddpg.py --episodes 60 --train-scenario both --seed 7 --output online_xyz_ddpg\results_new
+
 Online plots from saved trajectories:
 python online_xyz_ddpg\plot_xyz_ddpg_comparison.py --results online_xyz_ddpg\results_new --output online_xyz_ddpg\results_new\plots
+
 Evaluation without retraining:
 python online_xyz_ddpg\simulation.py --results online_xyz_ddpg\results_final --output online_xyz_ddpg\results_final\simulation_figures
 
@@ -77,24 +86,5 @@ If an online plotting command reports missing files, verify that the specified r
 
 
 
-## We ask you, humbly, to support this open source movement
 
-Today we ask you to defend the open source independence of the Wowchemy website builder and themes 🐧
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
-
-### [❤️ Click here to become a GitHub Sponsor, unlocking awesome perks such as _exclusive academic templates and widgets_](https://github.com/sponsors/gcushen)
-
-## Demo credits
-
-Please replace the demo images with your own.
-
-- [Female scientist](https://unsplash.com/photos/uVnRa6mOLOM)
-- [2 Coders](https://unsplash.com/photos/kwzWjTnDPLk)
-- [Cafe](https://unsplash.com/photos/RnDGGnMEOao)
-- Blog posts
-  - https://unsplash.com/photos/AndE50aaHn4
-  - https://unsplash.com/photos/OYzbqk2y26c
-- Avatars
-  - https://unsplash.com/photos/5yENNRbbat4
-  - https://unsplash.com/photos/WNoLnJo7tS8
