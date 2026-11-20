@@ -3,14 +3,16 @@
 ![DJI Tello trajectory demo](./preview.jpg)
 
 
+[![PyTorch](https://img.shields.io/badge/PyTorch-latest-orange?style=for-the-badge)](https://pytorch.org/)
+[![Python](https://img.shields.io/badge/Python-latest-blue?style=for-the-badge)](https://www.python.org/)
+
+
+
 The **DDPG-SMC Repository** implements online SMC gain optimization for the DJI Tello quadcopter for trajectory tracking.
 
 ️⭐ Reinforcement learning enhanced sliding mode control framework for underactuated quadrotors, with aerodynamic modelling via blade element momentum theory.This repository contains Python simulations of a six-degree-of-freedom quadrotor controlled with sliding-mode control (SMC), offline Deep Deterministic Policy Gradient (DDPG) gain tuning, and an online/time-varying DDPG residual-gain controller ⭐
 
 The offline studies select fixed gains before a trajectory is simulated. The online study changes only the nine position-loop gains during the square manoeuvre; roll, pitch, and yaw gains remain fixed. The plant mass is randomized by 5% during online training, while the controller uses the nominal 0.080 kg model mass.
-
-[![PyTorch](https://img.shields.io/badge/PyTorch-latest-orange?style=for-the-badge)](https://pytorch.org/)
-[![Python](https://img.shields.io/badge/Python-latest-blue?style=for-the-badge)](https://www.python.org/)
 
 This framework includes both offline and online DDPG variants for sliding mode control gain tuning. It generates trajectory visualization GIFs and compares tracking performance against manually tuned SMC and PID/PD baseline controllers.
 
@@ -61,6 +63,7 @@ Training uses a nominal controller mass of 0.080 kg and samples the simulated pl
 
 Run all commands from the repository root. A Python 3.9+ environment is recommended. Install the packages below:
 
+```
 python -m venv .venv
 
 .\.venv\Scripts\Activate.ps1
@@ -68,42 +71,56 @@ python -m venv .venv
 python -m pip install --upgrade pip
 
 python -m pip install numpy scipy matplotlib torch numba
-
+```
 
 
 **Syntax check without starting training:**
 
+```
 python -m py_compile DDPD_Traj_1.py DDPD_Traj_2.py Simulation_Traj_1.py Simulation_Traj_2.py
 
 python -m py_compile online_xyz_ddpg\online_xyz_ddpg.py online_xyz_ddpg\simulation.py online_xyz_ddpg\plot_xyz_ddpg_comparison.py
+```
 
 **Square optimization smoke test and full run:**
 
+```
 python DDPD_Traj_1.py --passes 1 --episodes 2 --patience 2 --no-plots --output square_smoke.npz
 
 python DDPD_Traj_1.py --passes 3 --episodes 600 --patience 55 --seed 7 --output square_ddpg_results.npz
+```
 
 **Square comparison:**
 
+```
 python Simulation_Traj_1.py
+```
 
 **S-curve optimization and comparison:**
 
+```
 python DDPD_Traj_2.py
 python Simulation_Traj_2.py
+```
 
 **Online DDPG smoke test and training:**
 
+```
 python online_xyz_ddpg\online_xyz_ddpg.py --episodes 2 --train-scenario both --output online_xyz_ddpg\smoke
 python online_xyz_ddpg\online_xyz_ddpg.py --episodes 60 --train-scenario both --seed 7 --output online_xyz_ddpg\results_new
+```
 
 **Online plots from saved trajectories:**
 
+```
 python online_xyz_ddpg\plot_xyz_ddpg_comparison.py --results online_xyz_ddpg\results_new --output online_xyz_ddpg\results_new\plots
+```
 
 **Evaluation without retraining:**
 
+```
 python online_xyz_ddpg\simulation.py --results online_xyz_ddpg\results_final --output online_xyz_ddpg\results_final\simulation_figures
+```
 
 ## Troubleshooting
 If an online plotting command reports missing files, verify that the specified result directory contains `online_xyz_ddpg_actor_critic.pt`, both adaptive/fixed NPZ files, and `evaluation_summary.json`. If a training run is slow, start with the smoke command, then increase the episode count. If figures appear in windows rather than being saved, use `simulation.py` or `plot_xyz_ddpg_comparison.py`, which save files directly.
